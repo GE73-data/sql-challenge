@@ -33,18 +33,20 @@ SELECT first_name, last_name, sex
 
 -- 6.List all employees in the Sales department, including their employee number, last name, first name, and department name.
 select employees.emp_no,last_name,first_name, departments.dept_name 
-	from public.employees left join public.dept_employees
+	from public.employees 
+ 	join public.dept_employees
 	on employees.emp_no = dept_employees.emp_no
-	left join public.departments
+	join public.departments
 	on dept_employees.dept_no = departments.dept_no
 	where departments.dept_name = 'Sales'; 
 
 -- 7.List all employees in the Sales and Development departments, including their employee number, last name, 
 --first name, and department name.
 select employees.emp_no,last_name,first_name, departments.dept_name 
-	from public.employees left join public.dept_employees
+from public.employees 
+ 	join public.dept_employees
 	on employees.emp_no = dept_employees.emp_no
-	left join public.departments
+ 	join public.departments
 	on dept_employees.dept_no = departments.dept_no
 	where departments.dept_name = 'Sales' or departments.dept_name = 'Development';
 
